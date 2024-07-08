@@ -7,7 +7,7 @@ defmodule DungeonCrawl.Battle do
         char_b = %{hit_points: hit_points_b}
       )
       when hit_points_a == 0 or hit_points_b == 0,
-      do: {char_a, char_b}
+      do: {char_a, char_b, char_b.loot}
 
   def fight(char_a, char_b) do
     char_b_after_damage = attack(char_a, char_b)
@@ -46,7 +46,7 @@ defmodule DungeonCrawl.Battle do
   end
 
   defp receive_message(character = %{name: "You"}, damage) do
-    "You receive #{damage}. Current HP: #{character.hit_points}."
+    "You take #{damage} damage. Current HP: #{character.hit_points}."
   end
 
   defp receive_message(character, damage) do
