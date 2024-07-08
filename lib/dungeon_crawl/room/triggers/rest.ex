@@ -8,6 +8,8 @@ defmodule DungeonCrawl.Room.Triggers.Rest do
     {character, :forward}
   end
 
+  # TODO: This currently heals no matter what - fix (maybe in Character.heal())
+  # i.e. you're at full health and it shows "you heal for 5"
   def run(character, %DungeonCrawl.Room.Action{id: :rest}) do
     healing_value = Enum.random(3..6)
     updated_char = Character.heal(character, healing_value)

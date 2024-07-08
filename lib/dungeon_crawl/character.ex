@@ -4,7 +4,8 @@ defmodule DungeonCrawl.Character do
             hit_points: 0,
             max_hit_points: 0,
             attack_description: nil,
-            damage_range: nil
+            damage_range: nil,
+            loot: 0
 
   defimpl String.Chars do
     def to_string(character), do: character.name
@@ -16,7 +17,8 @@ defmodule DungeonCrawl.Character do
           hit_points: non_neg_integer(),
           max_hit_points: non_neg_integer(),
           attack_description: String.t(),
-          damage_range: Range.t()
+          damage_range: Range.t(),
+          loot: non_neg_integer()
         }
 
   def take_damage(character, damage) do
@@ -34,6 +36,12 @@ defmodule DungeonCrawl.Character do
     %{character | hit_points: new_hit_points}
   end
 
+  def get_loot(character, loot_found) do
+    new_loot = character.loot + loot_found
+    %{character | loot: new_loot}
+  end
+
   def current_stats(character),
-    do: "Player Stats\nHP: #{character.hit_points}/#{character.max_hit_points}"
+    do:
+      "Player Stats\nHP: #{character.hit_points}/#{character.max_hit_points}\nLoot: #{character.loot} gold pieces\n"
 end

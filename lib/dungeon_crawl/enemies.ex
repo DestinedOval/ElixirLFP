@@ -5,27 +5,42 @@ defmodule DungeonCrawl.Enemies do
     do: [
       %Character{
         name: "Ogre",
-        description: "A large creature. Big muscles. Angry and hungry.",
+        description: "a large creature. Big muscles. Angry and hungry",
         hit_points: 12,
         max_hit_points: 12,
         damage_range: 3..5,
-        attack_description: "a hammer"
+        attack_description: "a hammer",
+        loot: Enum.random(1..2)
       },
       %Character{
-        name: "Orc",
-        description: "A green evil creature. Wears armor and an axe.",
-        hit_points: 8,
-        max_hit_points: 8,
+        name: "Skeleton",
+        description:
+          "the reanimated remains of a long dead warrior. It carries a rusted shortsword",
+        hit_points: 6,
+        max_hit_points: 6,
         damage_range: 2..4,
-        attack_description: "an axe"
+        attack_description: "a rusted shortsword",
+        loot: Enum.random(1..3)
       },
       %Character{
         name: "Goblin",
-        description: "A small green creature. Wears dirty clothes and a dagger.",
+        description:
+          "a small, green, hunched over creature. It wears dirty rags and wields a dagger",
         hit_points: 4,
         max_hit_points: 4,
         damage_range: 1..2,
-        attack_description: "a dagger"
+        attack_description: "a dagger",
+        loot: Enum.random(2..6)
+      },
+      %Character{
+        name: "Swarm of Bats",
+        description:
+          "a squeaking horde of bats. They flap around on leathery wings and swoop towards you",
+        hit_points: 4,
+        max_hit_points: 4,
+        damage_range: 1..5,
+        attack_description: "a series of tiny, stinging bites",
+        loot: 0
       }
     ]
 end

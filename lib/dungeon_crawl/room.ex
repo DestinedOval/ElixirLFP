@@ -22,6 +22,11 @@ defmodule DungeonCrawl.Room do
         description: "You can see an enemy blocking your path.",
         actions: [forward()],
         trigger: Triggers.Enemy
+      },
+      %Room{
+        description: "Loot Room.",
+        actions: [forward(), search()],
+        trigger: Triggers.Search
       }
     ]
 end
