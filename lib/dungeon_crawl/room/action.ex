@@ -3,7 +3,7 @@ defmodule DungeonCrawl.Room.Action do
 
   defstruct label: nil, id: nil
 
-  def forward, do: %Action{id: :forward, label: "Keep moving."}
+  def forward, do: %Action{id: :forward, label: "Move forward."}
   def rest, do: %Action{id: :rest, label: "Take some time to rest."}
   def search, do: %Action{id: :search, label: "Search the room."}
 

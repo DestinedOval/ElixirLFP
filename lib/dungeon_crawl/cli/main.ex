@@ -4,7 +4,7 @@ defmodule DungeonCrawl.Cli.Main do
   def start_game do
     welcome_message()
     Shell.prompt("Press Enter to continue")
-    crawl(hero_choice(), DungeonCrawl.Room.all())
+    crawl(hero_choice(), DungeonCrawl.Room.some())
   end
 
   defp crawl(%{hit_points: 0}, _) do
@@ -31,7 +31,7 @@ defmodule DungeonCrawl.Cli.Main do
   end
 
   defp welcome_message do
-    Shell.info("=== Dungeon Crawl ===")
+    Shell.info("\n=== Dungeon Crawl ===\n")
     Shell.info("You awake in a dungeon full of monsters.")
     Shell.info("You need to survive and find the exit.")
   end
@@ -47,8 +47,13 @@ defmodule DungeonCrawl.Cli.Main do
   end
 
   defp handle_action_result({_, :exit}),
-    do: Shell.info("You found the exit. You won the game. Congratulations!")
+    do: Shell.info("You escaped the dungeon. Congratulations!")
 
-  defp handle_action_result({character, _}),
-    do: crawl(character, DungeonCrawl.Room.all())
+  defp handle_action_result({character, _}) do
+    if character.rooms_visited > 3 do
+      crawl(character, DungeonCrawl.Room.all())
+    else
+      crawl(character, DungeonCrawl.Room.some())
+    end
+  end
 end

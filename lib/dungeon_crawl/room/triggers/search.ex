@@ -14,6 +14,7 @@ defmodule DungeonCrawl.Room.Triggers.Search do
     Shell.info("You search around the room for anything of value.")
     Shell.info("You find #{found_loot} gold pieces!")
     Shell.info("You now have #{updated_char.loot} total gold pieces.")
+    updated_char = Character.visit_room(updated_char, 1)
     {updated_char, :forward}
   end
 end

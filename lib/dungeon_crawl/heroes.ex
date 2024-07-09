@@ -8,7 +8,7 @@ defmodule DungeonCrawl.Heroes do
         description: "Knight has strong defense and consistent damage",
         hit_points: 18,
         max_hit_points: 18,
-        damage_range: 4..5,
+        damage_range: 3..4,
         attack_description: "a wsord"
       },
       %Character{
@@ -26,6 +26,14 @@ defmodule DungeonCrawl.Heroes do
         max_hit_points: 12,
         damage_range: 1..12,
         attack_description: "a dagger"
+      },
+      %Character{
+        name: "Cleric",
+        description: "Cleric has middling health and damage",
+        hit_points: 10,
+        max_hit_points: 10,
+        damage_range: 4..6,
+        attack_description: "a powerful holy strike"
       }
     ]
 end

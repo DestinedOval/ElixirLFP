@@ -14,6 +14,7 @@ defmodule DungeonCrawl.Room.Triggers.Enemy do
     updated_char = Character.get_loot(updated_char, loot)
     Shell.info("\nYou find #{loot} gold pieces after the battle.\n")
     Shell.info("You now have #{updated_char.loot} gold pieces.\n")
+    updated_char = Character.visit_room(updated_char, 1)
     {updated_char, :forward}
   end
 end
