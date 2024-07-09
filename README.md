@@ -4,9 +4,14 @@ This is the Dungeon Crawl example from Chapter 6 of the book "[Learn Functional 
 
 # TODO:
 - [x] ~Add basic loot to monsters/rooms.~
-- [ ] Add variance to the room generation.
-  - Maybe add a 'rooms visited' counter to prevent the exit appearing before other rooms.
-  - Maybe some kind of weighting.
+- [x] ~Add room counter so the exit can't appear immediately.~
 - [ ] Add a 'Flee' trigger to run away from a fight, enemy will get an Attack of Opportunity.
-- [ ] Add more monsters.
-- [ ] Add more rooms.
+- [ ] Add some kind of special ability to each character class.
+- [x] ~Add more monsters.~
+  - Added Ooze that drops more gold
+  - Also changed the damage of other enemies (Ogre can now one-shot Sorceror 👹)
+- [x] ~Add more rooms.~
+  - Added another treasure room and another battle room
+- [x] ~Add at least one more character class.~
+  - Added Cleric class (gave literally no consideration to balance)
+

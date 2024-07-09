@@ -16,6 +16,7 @@ defmodule DungeonCrawl.Room.Triggers.Rest do
     Shell.info("You take a moment to catch your breath and bandage your wounds.")
     Shell.info("You heal for #{healing_value} HP.")
     Shell.info("You now have #{updated_char.hit_points} / #{updated_char.max_hit_points} HP.")
+    updated_char = Character.visit_room(updated_char, 1)
     {updated_char, :forward}
   end
 end

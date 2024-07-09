@@ -5,7 +5,8 @@ defmodule DungeonCrawl.Character do
             max_hit_points: 0,
             attack_description: nil,
             damage_range: nil,
-            loot: 0
+            loot: 0,
+            rooms_visited: 0
 
   defimpl String.Chars do
     def to_string(character), do: character.name
@@ -18,7 +19,8 @@ defmodule DungeonCrawl.Character do
           max_hit_points: non_neg_integer(),
           attack_description: String.t(),
           damage_range: Range.t(),
-          loot: non_neg_integer()
+          loot: non_neg_integer(),
+          rooms_visited: non_neg_integer()
         }
 
   def take_damage(character, damage) do
@@ -41,7 +43,12 @@ defmodule DungeonCrawl.Character do
     %{character | loot: new_loot}
   end
 
+  def visit_room(character, number_of_rooms) do
+    updated_rooms = character.rooms_visited + number_of_rooms
+    %{character | rooms_visited: updated_rooms}
+  end
+
   def current_stats(character),
     do:
-      "Player Stats\nHP: #{character.hit_points}/#{character.max_hit_points}\nLoot: #{character.loot} gold pieces\n"
+      "=== Player Stats ===\nHP: #{character.hit_points}/#{character.max_hit_points}\nLoot: #{character.loot} gold pieces\nRooms Visited: #{character.rooms_visited}\n"
 end
