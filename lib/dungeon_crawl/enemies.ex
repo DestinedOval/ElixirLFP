@@ -9,7 +9,7 @@ defmodule DungeonCrawl.Enemies do
         hit_points: 12,
         max_hit_points: 12,
         damage_range: 3..8,
-        attack_description: "a hammer",
+        attack_description: "its large club",
         loot: Enum.random(1..2)
       },
       %Character{
@@ -19,7 +19,7 @@ defmodule DungeonCrawl.Enemies do
         hit_points: 6,
         max_hit_points: 6,
         damage_range: 1..6,
-        attack_description: "a rusted shortsword",
+        attack_description: "its rusted shortsword",
         loot: Enum.random(1..3)
       },
       %Character{
@@ -29,7 +29,7 @@ defmodule DungeonCrawl.Enemies do
         hit_points: 4,
         max_hit_points: 4,
         damage_range: 2..5,
-        attack_description: "a dagger",
+        attack_description: "its dagger",
         loot: Enum.random(2..6)
       },
       %Character{
@@ -49,7 +49,7 @@ defmodule DungeonCrawl.Enemies do
         hit_points: 10,
         max_hit_points: 10,
         damage_range: 1..2,
-        attack_description: "a caustic acid",
+        attack_description: "a splash of caustic acid",
         loot: Enum.random(5..10)
       }
     ]

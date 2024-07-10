@@ -5,7 +5,8 @@ This is the Dungeon Crawl example from Chapter 6 of the book "[Learn Functional 
 # TODO:
 - [x] ~Add basic loot to monsters/rooms.~
 - [x] ~Add room counter so the exit can't appear immediately.~
-- [ ] Add a 'Flee' trigger to run away from a fight, enemy will get an Attack of Opportunity.
+- [x] ~Add a 'Flee' trigger to run away from a fight, enemy will get an Attack of Opportunity.~
+  - Player can now flee from a battle, triggering an opportunity attack, this does not count as a visted room.
 - [ ] Add some kind of special ability to each character class.
 - [x] ~Add more monsters.~
   - Added Ooze that drops more gold

@@ -15,6 +15,11 @@ defmodule DungeonCrawl.Battle do
     fight(char_a_after_damage, char_b_after_damage)
   end
 
+  def opportunity_attack(char_a, char_b) do
+    char_a_after_damage = attack(char_b, char_a)
+    {char_a_after_damage, char_b, char_b.loot}
+  end
+
   defp attack(%{hit_points: hit_points_a}, character_b)
        when hit_points_a == 0,
        do: character_b

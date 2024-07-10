@@ -4,6 +4,15 @@ defmodule DungeonCrawl.Room.Triggers.Enemy do
   alias DungeonCrawl.Character
   alias Mix.Shell.IO, as: Shell
 
+  def run(character, %DungeonCrawl.Room.Action{id: :flee}) do
+    enemy = Enum.random(DungeonCrawl.Enemies.all())
+
+    Shell.info("You see #{enemy.description}.")
+    Shell.info("The enemy #{enemy.name} lands a hit as you try and escape.")
+    {updated_char, _enemy, _loot} = DungeonCrawl.Battle.opportunity_attack(character, enemy)
+    {updated_char, :forward}
+  end
+
   def run(character, %DungeonCrawl.Room.Action{id: :forward}) do
     enemy = Enum.random(DungeonCrawl.Enemies.all())
 

@@ -15,13 +15,13 @@ defmodule DungeonCrawl.Room do
       },
       %Room{
         description: "You can see an enemy blocking your path.",
-        actions: [forward()],
+        actions: [forward(), flee()],
         trigger: Triggers.Enemy
       },
       %Room{
         description:
           "You hit a dead end, as you make your way back you run into a roaming enemy.",
-        actions: [forward()],
+        actions: [forward(), flee()],
         trigger: Triggers.Enemy
       },
       %Room{
@@ -46,13 +46,13 @@ defmodule DungeonCrawl.Room do
       },
       %Room{
         description: "You can see an enemy blocking your path.",
-        actions: [forward()],
+        actions: [forward(), flee()],
         trigger: Triggers.Enemy
       },
       %Room{
         description:
           "You hit a dead end, as you make your way back you run into a roaming enemy.",
-        actions: [forward()],
+        actions: [forward(), flee()],
         trigger: Triggers.Enemy
       },
       %Room{
