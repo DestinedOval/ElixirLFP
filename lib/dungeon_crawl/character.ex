@@ -50,5 +50,5 @@ defmodule DungeonCrawl.Character do
 
   def current_stats(character),
     do:
-      "=== Player Stats ===\nHP: #{character.hit_points}/#{character.max_hit_points}\nLoot: #{character.loot} gold pieces\nRooms Visited: #{character.rooms_visited}\n"
+      "=== Player Stats ===\nHP: #{character.hit_points}/#{character.max_hit_points}\nLoot: #{character.loot} gold pieces\nRooms Visited: #{character.rooms_visited}\n====================\n"
 end
