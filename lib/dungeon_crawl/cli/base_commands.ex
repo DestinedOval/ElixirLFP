@@ -13,7 +13,7 @@ defmodule DungeonCrawl.Cli.BaseCommands do
 
   def generate_question(options) do
     options = Enum.join(1..Enum.count(options), ",")
-    "What do you do? [#{options}]\n"
+    "Which one? [#{options}]\n"
   end
 
   def parse_answer(answer) do
