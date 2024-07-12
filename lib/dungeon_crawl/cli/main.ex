@@ -46,8 +46,11 @@ defmodule DungeonCrawl.Cli.Main do
     room.trigger.run(character, action)
   end
 
-  defp handle_action_result({_, :exit}),
-    do: Shell.info("You escaped the dungeon. Congratulations!")
+  defp handle_action_result({character, :exit}) do
+    Shell.info("You escaped the dungeon. Congratulations!\n")
+    Shell.info("Your final stats are:\n")
+    Shell.info(DungeonCrawl.Character.current_stats(character))
+  end
 
   defp handle_action_result({character, _}) do
     if character.rooms_visited > 3 do
