@@ -15,4 +15,3 @@ This is the Dungeon Crawl example from Chapter 6 of the book "[Learn Functional 
   - Added another treasure room and another battle room
 - [x] ~Add at least one more character class.~
   - Added Cleric class (gave literally no consideration to balance)
-
